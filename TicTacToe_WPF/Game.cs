@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe
+namespace TicTacToe_WPF
 {
     internal class Game
     {
         Random random = new Random();
-        int num = 0, step = 0;
+        public int num = 0, step = 0;
         string msg1 = "Победил игрок играющий крестиком!\n";
         //string msg1 = "Победил игрок!\n";
         //string msg2 = "Победил компьютер!\n";
         string msg2 = "Победил игрок играющий ноликом!\n";
-        char cross = 'X', zero = 'O';
+        public string cross = "X", zero = "O";
         char[] Endaged = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
         string screen = "-------------\n|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   |   |   |\n-------------\n";
@@ -332,54 +332,38 @@ namespace TicTacToe
         }
 
         // Кто ходит?
-        void Step()
+        public string Step()
         {
-            if (step == 0)
+            switch(step)
             {
-                Player(cross);
-                step++;
-            }
-            else
-            {
-                //ComLogic(zero);
-                Player(zero);
-                step = 0;
-            }
-        }
-
-        // 
-        void Screen()
-        {
-            for (int i = 0, m = 0, j = 16; i < 9; i++)
-            {
-                StringBuilder sb = new StringBuilder(screen);
-                sb[j] = Endaged[i];
-                screen = sb.ToString();
-                if (m >= 0 && m <= 1)
+                case 0:
                 {
-                    j += 4;
-                    m++;
+                     //Player(cross);
+                     step++;
+                     return cross;
                 }
-                else
+                case 1: 
                 {
-                    j += 20;
-                    m = 0;
+                     //ComLogic(zero);
+                     //Player(zero);
+                     step = 0;
+                     return zero; 
                 }
             }
-            Console.Clear();
-            Console.WriteLine("Игра крестики - нолики\n");
-            Console.Write(screen);
+            return "";
         }
 
         //
         public void Play()
         {
+            
             step = random.Next(2 + 0);
             do
             {
-                Screen();
+                
+                
                 Step();
-                Screen();
+                
             } while (Is_Winner() && Is_Draw());
         }
     }

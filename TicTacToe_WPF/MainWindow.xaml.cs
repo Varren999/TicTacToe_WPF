@@ -20,9 +20,59 @@ namespace TicTacToe_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        Random random = new Random();
+        Game game = new Game();
         public MainWindow()
         {
             InitializeComponent();
+            game.step = random.Next(2 + 0);
+            textFields.Text = game.Step();
+        }
+
+        private void one_Click(object sender, RoutedEventArgs e)
+        {
+            one.IsEnabled = false;
+            //one.Content = 
+        }
+
+        private void two_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void three_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void four_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void five_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sex_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void seven_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void eight_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void nine_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
