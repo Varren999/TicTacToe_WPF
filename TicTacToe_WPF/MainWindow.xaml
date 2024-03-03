@@ -19,14 +19,14 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textFields" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
-        <Button x:Name="one" Grid.Column="0" Grid.Row="1" Content="1" Margin="3" Click="one_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="two" Grid.Column="1" Grid.Row="1" Content="2" Margin="3" Click="two_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="three" Grid.Column="2" Grid.Row="1" Content="3" Margin="3" Click="three_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="four" Grid.Column="0" Grid.Row="2" Content="4" Margin="3" Click="four_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="five" Grid.Column="1" Grid.Row="2" Content="5" Margin="3" Click="five_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="sex" Grid.Column="2" Grid.Row="2" Content="6" Margin="3" Click="sex_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="seven" Grid.Column="0" Grid.Row="3" Content="7" Margin="3" Click="seven_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="eight" Grid.Column="1" Grid.Row="3" Content="8" Margin="3" Click="eight_Click" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="nine" Grid.Column="2" Grid.Row="3" Content="9" Margin="3" Click="nine_Click" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="one" Grid.Column="0" Grid.Row="1" Content="1" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="two" Grid.Column="1" Grid.Row="1" Content="2" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="three" Grid.Column="2" Grid.Row="1" Content="3" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="four" Grid.Column="0" Grid.Row="2" Content="4" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="five" Grid.Column="1" Grid.Row="2" Content="5" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="six" Grid.Column="2" Grid.Row="2" Content="6" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="seven" Grid.Column="0" Grid.Row="3" Content="7" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="eight" Grid.Column="1" Grid.Row="3" Content="8" Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="nine" Grid.Column="2" Grid.Row="3" Content="9" Margin="3" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Window>
