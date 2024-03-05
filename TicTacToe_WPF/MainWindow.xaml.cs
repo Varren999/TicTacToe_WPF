@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TicTacToe_WPF
 {
@@ -30,40 +18,69 @@ namespace TicTacToe_WPF
 
         public MainWindow()
         {
-            InitializeComponent();
-            step = random.Next(2);
-            textFields.Text = step == 0 ? msg[1] : msg[0];
-
-            foreach (UIElement el in GameFields.Children)
+            try
             {
-                if(el is Button)
+                InitializeComponent();
+                step = random.Next(2);
+                textFields.Text = step == 0 ? msg[1] : msg[0];
+
+                foreach (UIElement el in GameFields.Children)
                 {
-                    ((Button)el).Click += Click_Button;
+                    if (el is Button)
+                    {
+                        ((Button)el).Click += Click_Button;
+                    }
                 }
             }
-
-            Is_Winner();
-                
+            catch(Exception ex)
+            {
+                MessageBox.Show("MainWindow" + ex.Message);
+            }
         }
 
+        //
         private void Click_Button(object sender, RoutedEventArgs e)
         {
-            textFields.Text = msg[step];
-            ((Button)e.OriginalSource).Content = Step();
-            ((Button)e.OriginalSource).IsEnabled = false;
-        }
-
-        private void Is_Draw(object sender, RoutedEventArgs e)
-        {
-            foreach (UIElement el in GameFields.Children)
+            try
             {
-                if (el is Button)
+                textFields.Text = msg[step];
+                ((Button)e.OriginalSource).Content = Step();
+                ((Button)e.OriginalSource).IsEnabled = false;
+
+                if (Is_Winner())
                 {
-                    //((Button)el).Click += Click_Button;
+                    MessageBox.Show(win[step]);
+                    Environment.Exit(0);
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Click_Button " + ex.Message);
             }
         }
 
+        //private bool Is_Draw(object sender, RoutedEventArgs e)
+        //{
+        //    bool value = true;
+        //    try
+        //    {
+        //        foreach (UIElement el in GameFields.Children)
+        //        {
+        //            if (el is Button)
+        //            {
+        //                if (((Button)el).Content.ToString() == "")
+        //                    value = false;
+        //            }
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        MessageBox.Show("Is_Draw " + ex.Message);
+        //    }
+        //    return value;
+        //}
+
+        //
         private string Step()
         {
             if (step == 0)
@@ -78,67 +95,68 @@ namespace TicTacToe_WPF
             }
         }
 
-        private void ComLogic(object sender, RoutedEventArgs e)
-        {
-            textFields.Text = msg[step];
-            ((Button)e.OriginalSource).Content = Step();
-            ((Button)e.OriginalSource).IsEnabled = false;
-        }
+        ////
+        //private void ComLogic(object sender, RoutedEventArgs e)
+        //{
+        //    textFields.Text = msg[step];
+        //    ((Button)e.OriginalSource).Content = Step();
+        //    ((Button)e.OriginalSource).IsEnabled = false;
+        //}
 
        //Метод проверяет выигрышные ситуации.
-       bool Is_Winner()
+       private bool Is_Winner()
         {
             // 1 == 2 == 3
-            if (one.Content == two.Content && two.Content == three.Content)
+            if (one.Content == two.Content && two.Content == three.Content && (string)three.Content == cross || one.Content == two.Content && two.Content == three.Content && (string)three.Content == zero)
             {
                 textFields.Text = win[step];               
                 return true;
             }
 
             // 4 == 5 == 6
-            if (four.Content == five.Content && five.Content == six.Content)
+            if (four.Content == five.Content && five.Content == six.Content && (string)six.Content == cross || four.Content == five.Content && five.Content == six.Content && (string)six.Content == zero)
             {
                 textFields.Text = win[step];
                 return true;
             }
 
             // 7 == 8 == 9
-            if (seven.Content == eight.Content && nine.Content == three.Content)
+            if (seven.Content == eight.Content && eight.Content == nine.Content && (string)nine.Content == cross || seven.Content == eight.Content && eight.Content == nine.Content && (string)nine.Content == zero)
             {
                 textFields.Text = win[step];
                 return true;
             }
 
             // 1 == 5 == 9
-            if (one.Content == five.Content && five.Content == nine.Content)
+            if (one.Content == five.Content && five.Content == nine.Content && (string)nine.Content == cross || one.Content == five.Content && five.Content == nine.Content && (string)nine.Content == zero)
             {
                 textFields.Text = win[step];
                 return true;
             }
 
             // 3 == 5 == 7
-            if (three.Content == five.Content && five.Content == seven.Content)
+            if (three.Content == five.Content && five.Content == seven.Content && (string)seven.Content == cross || three.Content == five.Content && five.Content == seven.Content && (string)seven.Content == zero)
             {
                 textFields.Text = win[step];
                 return true;
             }
 
             // 1 == 4 == 7
-            if (one.Content == four.Content && four.Content == seven.Content)
+            if (one.Content == four.Content && four.Content == seven.Content && (string)seven.Content == cross || one.Content == four.Content && four.Content == seven.Content && (string)seven.Content == zero)
             {
                 textFields.Text = win[step];
                 return true;
             }
 
             // 2 == 5 == 8
-            if (two.Content == five.Content && five.Content == eight.Content)
+            if (two.Content == five.Content && five.Content == eight.Content && (string)eight.Content == cross || two.Content == five.Content && five.Content == eight.Content && (string)eight.Content == zero)
             {
                 textFields.Text = win[step];
                 return true;
             }
 
             // 3 == 6 == 9
-            if (three.Content == six.Content && six.Content == nine.Content)
+            if (three.Content == six.Content && six.Content == nine.Content && (string)nine.Content == cross || three.Content == six.Content && six.Content == nine.Content && (string)nine.Content == zero)
             {
                 textFields.Text = win[step];
                 return true;
