@@ -19,14 +19,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textFields" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
-        <Button x:Name="one" Grid.Column="0" Grid.Row="1"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="two" Grid.Column="1" Grid.Row="1"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="three" Grid.Column="2" Grid.Row="1"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="four" Grid.Column="0" Grid.Row="2"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="five" Grid.Column="1" Grid.Row="2"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="six" Grid.Column="2" Grid.Row="2"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="seven" Grid.Column="0" Grid.Row="3"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="eight" Grid.Column="1" Grid.Row="3"  Margin="3" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="nine" Grid.Column="2" Grid.Row="3"  Margin="3" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="one" Grid.Column="0" Grid.Row="1"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="two" Grid.Column="1" Grid.Row="1"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="three" Grid.Column="2" Grid.Row="1"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="four" Grid.Column="0" Grid.Row="2"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="five" Grid.Column="1" Grid.Row="2"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="six" Grid.Column="2" Grid.Row="2"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="seven" Grid.Column="0" Grid.Row="3"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="eight" Grid.Column="1" Grid.Row="3"  Margin="3" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="nine" Grid.Column="2" Grid.Row="3"  Margin="3" FontSize="36" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -52,6 +52,12 @@ namespace TicTacToe_WPF
                     MessageBox.Show(win[step]);
                     Environment.Exit(0);
                 }
+                else if(Is_Draw())
+                {
+                    textFields.Text = "Ничья";
+                    MessageBox.Show("Ничья");
+                    Environment.Exit(0);
+                }
             }
             catch(Exception ex)
             {
@@ -59,26 +65,20 @@ namespace TicTacToe_WPF
             }
         }
 
-        //private bool Is_Draw(object sender, RoutedEventArgs e)
-        //{
-        //    bool value = true;
-        //    try
-        //    {
-        //        foreach (UIElement el in GameFields.Children)
-        //        {
-        //            if (el is Button)
-        //            {
-        //                if (((Button)el).Content.ToString() == "")
-        //                    value = false;
-        //            }
-        //        }
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        MessageBox.Show("Is_Draw " + ex.Message);
-        //    }
-        //    return value;
-        //}
+        private bool Is_Draw()
+        {
+            bool value = true;
+            try
+            {
+                //if (one.Content == two.Content && two.Content == three.Content && four.Content == five.Content && five.Content == six.Content && seven.Content == eight.Content && eight.Content == nine.Content)
+                    value = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Is_Draw " + ex.Message);
+            }
+            return value;
+        }
 
         //
         private string Step()
