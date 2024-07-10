@@ -38,7 +38,11 @@ namespace TicTacToe_WPF
             }
         }
 
-        //
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Click_Button(object sender, RoutedEventArgs e)
         {
             try
@@ -65,6 +69,10 @@ namespace TicTacToe_WPF
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private bool Is_Draw()
         {
             bool value = true;
@@ -80,7 +88,10 @@ namespace TicTacToe_WPF
             return value;
         }
 
-        //
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private string Step()
         {
             if (step == 0)
